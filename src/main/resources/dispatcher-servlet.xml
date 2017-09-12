@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans default-lazy-init="true"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    <!--
+        关于Spring中的<context:annotation-config/>配置
+
+        　　当我们需要使用BeanPostProcessor时，直接在Spring配置文件中定义这些Bean显得比较笨拙，例如：
+        　　使用@Autowired注解，必须事先在Spring容器中声明AutowiredAnnotationBeanPostProcessor的Bean：
+
+        <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor "/>
+        　　使用 @Required注解，就必须声明RequiredAnnotationBeanPostProcessor的Bean：
+
+        <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+        　　类似地，使用@Resource、@PostConstruct、@PreDestroy等注解就必须声明 CommonAnnotationBeanPostProcessor；使用@PersistenceContext注解，就必须声明 PersistenceAnnotationBeanPostProcessor的Bean。
+        　　这样的声明未免太不优雅，而Spring为我们提供了一种极为方便注册这些BeanPostProcessor的方式，即使用<context:annotation- config/>隐式地向 Spring容器注册AutowiredAnnotationBeanPostProcessor、RequiredAnnotationBeanPostProcessor、CommonAnnotationBeanPostProcessor以及PersistenceAnnotationBeanPostProcessor这4个BeanPostProcessor。如下：
+
+        <context:annotation-config/>
+        　　另，在我们使用注解时一般都会配置扫描包路径选项：
+
+        <context:component-scan base-package="pack.pack"/>
+        　　该配置项其实也包含了自动注入上述processor的功能，因此当使用<context:component-scan/>后，即可将<context:annotation-config/>省去。
+
+
+        备注：
+        在配置文件中使用 context 命名空间之前，必须在 <beans> 元素中声明 context 命名空间。
+        <context:annotation-config />
+
+        <?xml version="1.0" encoding="UTF-8"?>
+     <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+    ...
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    ...
+        <context:annotation-config/>
+    </beans>
+        -->
+
+    <!--<mvc:annotation-driven/>相当于注册了DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter两个bean，配置一些messageconverter。即解决了@Controller注解的使用前提配置。-->
+    <!--激活了annoation 的 DI-->
+    <mvc:annotation-driven/>
+
+    <!--DispatcherServlet 上下文，只管理@Controller类型的bean，忽略起他bean 如@Service-->
+    <!--此标签是告诉Spring 来扫描指定包下的类，并注册被@Component，@Controller，@Service，@Repository等注解标记的组件。-->
+    <context:component-scan base-package="com.walle.action">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--定时任务-->
+    <!--<bean id="myJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+        <!--<property name="targetObject" ref="myTest"/>-->
+        <!--<property name="targetMethod" value="test"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="myTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">-->
+        <!--<property name="jobDetail" ref="myJob"/>-->
+        <!--<property name="repeatInterval" value="3000"/>-->
+        <!--<property name="startDelay" value="10000"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="myJob1" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">-->
+        <!--<property name="jobClass" value="com.walle.quartzs.MyJob"/>-->
+        <!--<property name="durability" value="true"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="myTrigger1" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+        <!--<property name="jobDetail" value="myJob1"/>-->
+        <!--<property name="cronExpression" value="0/5 * * ? *　*"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="mySchedule" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">-->
+        <!--<property name="jobDetails">-->
+            <!--<list>-->
+                <!--<ref bean="myJob1"/>-->
+                <!--<ref bean="myJob"/>-->
+            <!--</list>-->
+        <!--</property>-->
+        <!--<property name="triggers">-->
+            <!--<list>-->
+                <!--<ref bean="myTrigger1"/>-->
+                <!--<ref bean="myTrigger"/>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+</beans>

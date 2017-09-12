@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf=8" ?>
+<bookstore>
+    <book>
+        <name id="1">你大爷家的贩子</name>
+        <author>你大爷</author>
+        <year>2015</year>
+        <price>100</price>
+    </book>
+    <book>
+        <name id="2">小明和小红</name>
+        <year>1985</year>
+        <price>55</price>
+        <language>english</language>
+    </book>
+</bookstore>
