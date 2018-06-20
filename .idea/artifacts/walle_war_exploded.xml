@@ -6,34 +6,6 @@
         <element id="directory" name="classes">
           <element id="module-output" name="walle" />
         </element>
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
-          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-api:5.0.0-RC2" />
-          <element id="library" level="project" name="Maven: org.opentest4j:opentest4j:1.0.0-RC1" />
-          <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.0.0-RC2" />
-          <element id="library" level="project" name="Maven: org.testng:testng:6.11" />
-          <element id="library" level="project" name="Maven: com.beust:jcommander:1.64" />
-          <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.17" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.10.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.10.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.10.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.10.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.10.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.10.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-bean:4.3.10.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.10.RELEASE" />
-          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.3.10.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.10.RELEASE" />
-          <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz:2.2.0" />
-          <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.1" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.6" />
-          <element id="library" level="project" name="Maven: com.gexin.platform:gexin-rp-sdk-http:4.0.1.9" />
-          <element id="library" level="project" name="Maven: com.gexin.platform:gexin-rp-sdk-template:4.0.0.8" />
-          <element id="library" level="project" name="Maven: com.gexin.platform:gexin-rp-sdk-base:4.0.0.14" />
-          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:2.5.0" />
-          <element id="library" level="project" name="Maven: com.gexin.platform:gexin-rp-fastjson:1.0.0.0" />
-        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/walle/META-INF/MANIFEST.MF" />

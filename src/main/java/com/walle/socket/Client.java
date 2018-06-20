@@ -4,26 +4,26 @@ import java.io.*;
 import java.net.Socket;
 
 /**
- * ¿Í»§¶Ë
+ * å®¢æˆ·ç«¯
  * Created by Administrator on 2017/7/7.
  */
 public class Client {
     public static void main(String[] args) {
         try {
-            //´´½¨¿Í»§¶ËSocket£¬Ö¸¶¨·şÎñÆ÷µØÖ·ºÍ¶Ë¿Ú
+            //åˆ›å»ºå®¢æˆ·ç«¯Socketï¼ŒæŒ‡å®šæœåŠ¡å™¨åœ°å€å’Œç«¯å£
             Socket socket = new Socket("localhost", 8888);
-            //»ñÈ¡Êä³öÁ÷£¬Ïò¸´Î»Æ÷·¢ËÍĞÅÏ¢
-            OutputStream outputStream = socket.getOutputStream();//×Ö½ÚÊä³öÁ÷
+            //è·å–è¾“å‡ºæµï¼Œå‘å¤ä½å™¨å‘é€ä¿¡æ¯
+            OutputStream outputStream = socket.getOutputStream();//å­—èŠ‚è¾“å‡ºæµ
             PrintWriter printWriter = new PrintWriter(outputStream);
-            printWriter.write("ÎÒÊÇ¿Í»§¶Ë£ºÎÒµÄµÇÂ¼ÓÃ»§ÃûÊÇ£ºÄã´óÒ¯£»ÃÜÂëÊÇ£ºnidaye");
+            printWriter.write("æˆ‘æ˜¯å®¢æˆ·ç«¯ï¼šæˆ‘è¿ä¸Šäº†");
             printWriter.flush();
-            socket.shutdownOutput();//¹Ø±ÕÊä³öÁ÷
+            socket.shutdownOutput();//å…³é—­è¾“å‡ºæµ
 
             InputStream inputStream = socket.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String data = null;
             while((data=bufferedReader.readLine())!=null){
-                System.out.println("½ÓÊÕµ½·şÎñÆ÷¶ËĞÅÏ¢£º"+data);
+                System.out.println("æ¥æ”¶åˆ°æœåŠ¡å™¨ç«¯ä¿¡æ¯ï¼š"+data);
             }
             bufferedReader.close();
             inputStream.close();

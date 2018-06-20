@@ -3,5 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/walle/construct/Test.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/walle/socket/Client.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/walle/socket/Server.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/walle/thread/text" charset="ISO-8859-1" />
   </component>
 </project>

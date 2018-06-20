@@ -35,5 +35,8 @@ public class 女朋友 {
     public static void main(String[] args) {
         女朋友 女朋友 = new 女朋友(25,168,"大专",8888d,62f);
         System.out.println(女朋友.toString());
+        System.out.println(5%12);
     }
 }
+
+

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="axis">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/axis.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/axis.jar!/" />
+    </SOURCES>
+  </library>
+</component>
