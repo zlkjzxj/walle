@@ -8,5 +8,5 @@
 <url>http://maven.aliyun.com/nexus/content/groups/public</url>
 </mirror>
 
-2. idea 全局查找 Ctrl+H
+2.idea 全局查找 Ctrl+H
 
